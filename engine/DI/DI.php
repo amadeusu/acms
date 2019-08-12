@@ -8,12 +8,13 @@ class DI {
      */
     private $container = [];
 
+
     /**
      * @param $key
-     * @return bool
+     * @return mixed|null
      */
     public function has($key) {
-        return isset($this->container[$key]);
+        return isset($this->container[$key]) ? $this->container[$key] : null;
     }
 
     /**
@@ -22,12 +23,11 @@ class DI {
      * @return $this
      */
     public function set($key, $value) {
-        if ($this->has($key)) {
-            return $this;
-        } else {
-            $this->container[$key] = $value;
+        if ($this->has($key) !== null) {
             return $this;
         }
+        $this->container[$key] = $value;
+        return $this;
     }
 
     /**
