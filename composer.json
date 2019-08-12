@@ -1,0 +1,16 @@
+{
+    "name": "amadeusu/acms",
+    "description": "Amadeusu's PHP CMS",
+    "authors": [
+        {
+            "name": "amadeusu",
+            "email": "amadeusuraw@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine/"
+        }
+    },
+    "require": {}
+}
