@@ -33,9 +33,9 @@ class Cms
     public function run()
     {
         try {
-            $this->router->add('home', '/', 'HomeController:index');
-            $this->router->add('news', '/news', 'HomeController:news');
-            $this->router->add('news_single', '/news/(id:int)', 'HomeController:news');
+
+            require __DIR__ . '/../cms/Routes.php';
+
             $routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
 
             if ($routerDispatch == null) {
