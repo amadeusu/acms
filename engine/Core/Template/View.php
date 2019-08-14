@@ -4,7 +4,7 @@ namespace Engine\Core\Template;
 
 class View {
     /**
-     * @var Theme 
+     * @var Theme
      */
     protected $theme;
 
