@@ -15,6 +15,11 @@ class AdminController extends Controller {
     protected $auth;
 
     /**
+     * @var array
+     */
+    public $data = [];
+
+    /**
      * AdminController constructor.
      * @param DI $di
      */

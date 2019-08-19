@@ -85,9 +85,13 @@ class Theme {
      * @throws \Exception
      */
     private function loadTemplateFile($filename, $data = []) {
-        $file = ROOT_DIR . '/content/themes/default/' . $filename . '.php';
+        if(ENV == 'Cms'){
+            $file = ROOT_DIR . '/content/themes/default/' . $filename . '.php';
+        } else {
+            $file = ROOT_DIR . '/View/' . $filename . '.php';
+        }
         if(is_file($file)) {
-            extract($data);
+            extract(array_merge($data, $this->data));
             require $file;
         } else {
             throw new \Exception(
